@@ -24,7 +24,7 @@ def button(pages=2):
 
     page_to_crawl = int(pages) #決定要爬幾個頁數
     for page in range(total_page, total_page - page_to_crawl, -1):
-        url = 'https://www.ptt.cc/bbs/Beauty/index{}.html'.format(page)
+        url = 'https://www.ptt.cc/bbs/Pet_Get/index{}.html'.format(page)
         mainthread(url)
 
         
