@@ -198,7 +198,13 @@ def save(img_urls,title):
                     img_url = img_url.replace('//m.','//i.')
                 if not img_url.split('//')[1].startswith('i.'): #如果開頭不是i. 就加上去i.
                     img_url = img_url.split('//')[0]+'//i.'+img_url.split('//')[1]
-                if not img_url.endswith('.jpg'):  #如果尾巴沒有.jpg 加上個jpg檔名
+                if img_url.endswith('.gif'):
+                    pass
+                elif img_url.endswith('.png'):
+                    pass
+                elif img_url.endswith('.jpg'):
+                    pass
+                else:  #如果尾巴沒有.jpg 加上個jpg檔名
                     img_url += '.jpg'
                 fname = img_url.split('/')[-1] #切出最後段當作檔案名稱
                 urllib.request.urlretrieve(img_url, os.path.join('All_picture',str(today),dname,fname))#放的資料路徑,os.path.join 106.6.3
