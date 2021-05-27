@@ -17,8 +17,8 @@ def button(pages=2):
     from bs4 import BeautifulSoup
 
     HOST = "https://www.ptt.cc"
-    res = requests.get(HOST + "/bbs/Pet_Get/index.html", headers={"cookie": "over18=1;"})
-    soup = BeautifulSoup(res.text, 'lxml')
+    res = requests.get(HOST + "/bbs/Beauty/index.html", headers={"cookie": "over18=1;"})
+    soup = BeautifulSoup(res.text, 'html.parser')
     buttons = soup.select('a.btn.wide')
     total_page = int(buttons[1]['href'].split('index')[1].split('.html')[0]) + 1
 
